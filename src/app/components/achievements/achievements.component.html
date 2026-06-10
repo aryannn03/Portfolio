@@ -1,0 +1,22 @@
+<section id="achievements" class="section ach-section">
+  <div class="orb" style="width:400px;height:400px;background:rgba(59,130,246,0.07);top:50%;right:-100px;transform:translateY(-50%);"></div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-label">Milestones</p>
+      <h2 class="section-title">Achievements</h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card card fade-in"
+           *ngFor="let s of stats; let i = index"
+           [style.transition-delay]="(i * 0.12) + 's'">
+        <div class="stat-icon-wrap" [class]="'stat-icon-' + s.color">{{ s.icon }}</div>
+        <div class="stat-number" [class]="'gradient-text-' + (s.color === 'cyan' ? 'blue' : s.color)">
+          {{ displayed[i] }}{{ s.suffix }}
+        </div>
+        <div class="stat-label">{{ s.label }}</div>
+        <div class="stat-sublabel">{{ s.sublabel }}</div>
+      </div>
+    </div>
+  </div>
+</section>

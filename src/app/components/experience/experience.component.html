@@ -1,0 +1,39 @@
+<section id="experience" class="section exp-section">
+  <div class="orb" style="width:300px;height:300px;background:rgba(59,130,246,0.07);top:0;right:0;"></div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-label">Career</p>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">Where I've built, learned, and shipped.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-item fade-in" *ngFor="let exp of experiences; let i = index" [style.transition-delay]="(i * 0.15) + 's'">
+        <div class="timeline-dot"></div>
+        <div class="exp-card card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">{{ exp.role }}</div>
+              <div class="exp-company">
+                <span class="gradient-text-blue">{{ exp.company }}</span>
+              </div>
+              <div class="exp-tech">
+                <span *ngFor="let tech of exp.tech">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-period mono">{{ exp.period }}</span>
+              <span class="exp-badge">{{ exp.type }}</span>
+            </div>
+          </div>
+          <ul class="exp-points">
+            <li *ngFor="let point of exp.points">{{ point }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

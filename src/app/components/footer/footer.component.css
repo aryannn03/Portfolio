@@ -1,0 +1,17 @@
+.footer { padding: 24px 0; position: relative; }
+.footer-line { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin-bottom: 24px; }
+.footer-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+.footer-left { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-logo { font-size: 0.9rem; color: var(--purple); }
+.footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+.back-top {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.back-top:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-dim); }

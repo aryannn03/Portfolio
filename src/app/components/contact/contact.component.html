@@ -1,0 +1,82 @@
+<section id="contact" class="section contact-section">
+  <div class="orb" style="width:350px;height:350px;background:rgba(139,92,246,0.09);bottom:0;left:0;"></div>
+  <div class="orb" style="width:250px;height:250px;background:rgba(6,182,212,0.07);top:0;right:20%;animation-delay:-4s;"></div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's Build Something <span class="gradient-text-blue">Together</span></h2>
+      <p class="section-sub">Open to full-time roles, freelance projects, and interesting collaborations.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left fade-in">
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div>
+              <div class="info-label">Email</div>
+              <a href="mailto:aryan2017malik@gmail.com" class="info-value">aryan2017malik&#64;gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Location</div>
+              <div class="info-value">Hathras, Uttar Pradesh, India</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📱</div>
+            <div>
+              <div class="info-label">Phone</div>
+              <a href="tel:+918218134845" class="info-value">+91-8218134845</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links-grid">
+          <a *ngFor="let s of socials" [href]="s.url" target="_blank"
+             class="social-card card" [class]="'social-' + s.color">
+            <span class="social-name">{{ s.name }}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right fade-in" style="transition-delay:0.2s">
+        <div class="contact-form-wrap card" [class.success]="submitted">
+          <div *ngIf="!submitted" class="form-inner">
+            <h3 class="form-title">Send a Message</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Name</label>
+                <input [(ngModel)]="form.name" placeholder="Your name" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input [(ngModel)]="form.email" placeholder="your@email.com" type="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input [(ngModel)]="form.subject" placeholder="What's this about?" type="text" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea [(ngModel)]="form.message" placeholder="Tell me about your project or opportunity..." rows="5"></textarea>
+            </div>
+            <button class="btn-primary submit-btn"  (click)="onSubmit()" [disabled]="loading">
+              <span>{{ loading ? 'Sending...' : 'Send Message' }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <div *ngIf="submitted" class="success-msg">
+            <div class="success-icon">✓</div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

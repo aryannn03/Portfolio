@@ -1,0 +1,24 @@
+<section id="certifications" class="section cert-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card card fade-in" *ngFor="let c of certs; let i = index" [style.transition-delay]="(i * 0.15) + 's'">
+        <div class="cert-icon-wrap" [class]="'cert-icon-' + c.color">{{ c.icon }}</div>
+        <div class="cert-info">
+          <div class="cert-title">{{ c.title }}</div>
+          <div class="cert-meta">
+            <span class="cert-issuer" [class]="'gradient-text-' + c.color">{{ c.issuer }}</span>
+            <span class="cert-year mono">· {{ c.year }}</span>
+          </div>
+        </div>
+        <a [href]="c.link" target="_blank" class="cert-verify">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          Verify
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

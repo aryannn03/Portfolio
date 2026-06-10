@@ -1,0 +1,99 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.about-cta { margin-top: 32px; }
+
+/* Abstract graphic */
+.about-graphic {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 40px;
+}
+.graphic-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ring-1 { width: 240px; height: 240px; border-color: rgba(139,92,246,0.2); }
+.ring-2 { width: 170px; height: 170px; border-color: rgba(59,130,246,0.25); animation: spinRing 20s linear infinite; }
+.ring-3 { width: 100px; height: 100px; border-color: rgba(6,182,212,0.3); animation: spinRing 12s linear infinite reverse; }
+.graphic-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, var(--purple), var(--electric-blue));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(139,92,246,0.4);
+}
+.graphic-label { font-size: 0.65rem; color: white; }
+
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform-origin: 0 0;
+  animation: orbitSpin linear infinite;
+}
+.orbit-1 { width: 120px; height: 120px; margin: -60px 0 0 -60px; animation-duration: 8s; }
+.orbit-2 { width: 85px; height: 85px; margin: -42.5px 0 0 -42.5px; animation-duration: 12s; animation-direction: reverse; }
+.orbit-3 { width: 150px; height: 150px; margin: -75px 0 0 -75px; animation-duration: 16s; }
+@keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spinRing { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+.orbit-dot {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot-blue { background: var(--electric-blue); box-shadow: 0 0 10px var(--electric-blue); }
+.dot-purple { background: var(--purple); box-shadow: 0 0 10px var(--purple); }
+.dot-cyan { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.fact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.fact-card:hover {
+  border-color: rgba(139,92,246,0.4);
+  background: var(--bg-card-hover);
+}
+.fact-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.fact-label { font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.fact-value { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .facts-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .facts-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,50 @@
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left fade-in">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Crafting Code<br><span class="gradient-text-blue">with Purpose</span></h2>
+        <p class="about-text">
+          I'm a Computer Science graduate who loves the intersection of elegant architecture and real-world impact.
+          Whether it's microservices talking over RabbitMQ or a DistilBERT pipeline catching misinformation —
+          I build systems that scale, secure, and surprise.
+        </p>
+        <p class="about-text">
+          My journey spans from DSA grinding on LeetCode to shipping production-grade Spring Boot + Angular apps.
+          I believe every great product starts with disciplined engineering and obsessive attention to UX.
+        </p>
+        <div class="about-cta">
+          <a href="mailto:aryan2017malik@gmail.com" class="btn-primary">
+            <span>Say Hello</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right fade-in" style="transition-delay: 0.2s">
+        <!-- Abstract graphic -->
+        <div class="about-graphic">
+          <div class="graphic-ring ring-1"></div>
+          <div class="graphic-ring ring-2"></div>
+          <div class="graphic-ring ring-3"></div>
+          <div class="graphic-core">
+            <span class="mono graphic-label">&lt;/dev&gt;</span>
+          </div>
+          <div class="orbit orbit-1"><div class="orbit-dot dot-blue"></div></div>
+          <div class="orbit orbit-2"><div class="orbit-dot dot-purple"></div></div>
+          <div class="orbit orbit-3"><div class="orbit-dot dot-cyan"></div></div>
+        </div>
+
+        <div class="facts-grid">
+          <div class="fact-card fade-in" *ngFor="let f of facts; let i = index" [style.transition-delay]="(0.3 + i * 0.1) + 's'">
+            <span class="fact-icon">{{ f.icon }}</span>
+            <div>
+              <div class="fact-label mono">{{ f.label }}</div>
+              <div class="fact-value">{{ f.value }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

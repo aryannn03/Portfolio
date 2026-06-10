@@ -1,0 +1,76 @@
+.exp-section { background: radial-gradient(ellipse at 80% 50%, rgba(59,130,246,0.04) 0%, transparent 60%); }
+.section-header { margin-bottom: 60px; }
+.section-sub { color: var(--text-muted); font-size: 1rem; margin-top: 8px; }
+
+.timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--purple), var(--electric-blue), transparent);
+}
+.timeline-item { position: relative; padding-left: 40px; margin-bottom: 40px; }
+.timeline-dot {
+  position: absolute;
+  left: -6px;
+  top: 24px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--electric-blue));
+  box-shadow: 0 0 16px rgba(139,92,246,0.6);
+}
+
+.exp-card { padding: 28px 32px; }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+.exp-role { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; }
+.exp-company { font-size: 1rem; }
+.exp-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
+.exp-tech span{
+  padding:6px 12px;
+  border-radius:20px;
+  background:rgba(59,130,246,0.08);
+  border:1px solid rgba(59,130,246,0.2);
+  color:var(--electric-blue);
+  font-size:.75rem;
+  font-weight:500;
+}
+.exp-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.exp-period { font-size: 0.8rem; color: var(--text-muted); }
+.exp-badge {
+  padding: 4px 12px;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--electric-blue);
+  font-family: 'JetBrains Mono', monospace;
+}
+.exp-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.exp-points li {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+.exp-points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+}
+
+@media (max-width: 600px) {
+  .exp-header { flex-direction: column; }
+  .exp-meta { align-items: flex-start; }
+  .timeline-item { padding-left: 28px; }
+}
